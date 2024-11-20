@@ -31,6 +31,7 @@
     </style>
     <script src="scripts/add.js"></script>
     <script src="scripts/subtract.js"></script>
+    <script src="scripts/multiply.js"></script>
 </head>
 <body>
     <div class="calculator">
@@ -46,7 +47,7 @@
         <p id="result">Result = </p>
     </div>
     <div class="footer">
-        <span>22096749D ZHANG Chuhan- EIE4432 Git Lab</span><br>
+        <span>22096749D ZHANG Chuhan - EIE4432 Git Lab</span><br>
         <span id="date-time"></span>
     </div>
     <script>
@@ -78,6 +79,8 @@
                 result = add(num1, num2); // Use add function
             } else if (operator === "-") {
                 result = subtract(num1, num2); // Use subtract function
+            } else if (operator === "*") {
+                result = multiply(num1, num2); // Use multiply function
             } else {
                 result = "Operator not implemented yet"; // Placeholder for other operations
             }
@@ -88,5 +91,6 @@
     </script>
 </body>
 </html>
+
 
 
