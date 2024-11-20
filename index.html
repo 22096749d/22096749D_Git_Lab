@@ -29,6 +29,7 @@
             text-align: center;
         }
     </style>
+    <script src="scripts/add.js"></script>
 </head>
 <body>
     <div class="calculator">
@@ -41,10 +42,10 @@
         </select>
         <input type="text" placeholder="Enter second number" id="num2">
         <button id="calculate">Calculate</button>
-        <p>Result = </p>
+        <p id="result">Result = </p>
     </div>
     <div class="footer">
-        <span>22096749d ZHANG Chuhan - EIE4432 Git Lab</span><br>
+        <span>22096749D ZHANG Chuhan - EIE4432 Git Lab</span><br>
         <span id="date-time"></span>
     </div>
     <script>
@@ -59,6 +60,29 @@
     <script src="scripts/check.js"></script>
     <script>
         document.getElementById('calculate').addEventListener('click', calculate);
+
+        function calculate() {
+            if (!validateInputs()) {
+                return;
+            }
+
+            // Get input values and operator
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            const operator = document.getElementById('operator').value;
+
+            let result;
+
+            if (operator === "+") {
+                result = add(num1, num2); // Use add function from add.js
+            } else {
+                result = "Operator not implemented yet"; // Placeholder for other operations
+            }
+
+            // Display result
+            document.getElementById('result').textContent = `Result = ${result}`;
+        }
     </script>
 </body>
 </html>
+
