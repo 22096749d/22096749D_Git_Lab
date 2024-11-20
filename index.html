@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .calculator {
+            margin-top: 100px;
+        }
+        .calculator input, .calculator select, .calculator button {
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+        }
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" placeholder="Enter first number" id="num1">
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">×</option>
+            <option value="/">÷</option>
+        </select>
+        <input type="text" placeholder="Enter second number" id="num2">
+        <button id="calculate">Calculate</button>
+        <p>Result = </p>
+    </div>
+    <div class="footer">
+        <span>22096749D ZHANG Chuhan - EIE4432 Git Lab</span><br>
+        <span id="date-time"></span>
+    </div>
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            const dateTimeString = now.toLocaleString();
+            document.getElementById('date-time').textContent = dateTimeString;
+        }
+        updateDateTime();
+        setInterval(updateDateTime, 1000); // Update every second
+    </script>
+</body>
+</html>
